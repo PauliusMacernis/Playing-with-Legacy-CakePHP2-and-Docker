@@ -18,6 +18,11 @@
  * @license       http://www.opensource.org/licenses/mit-license.php MIT License
  */
 
+// Load Dotenv
+require __DIR__.'/../../vendor/autoload.php';
+$dotenv = new Dotenv\Dotenv(__DIR__.'/../../');
+$dotenv->load();
+
 /**
  * Use the DS to separate the directories in other defines
  */

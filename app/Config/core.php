@@ -1,4 +1,5 @@
 <?php
+// var_dump(cakeenv('APP_DEBUG')); exit;
 /**
  * This is core configuration file.
  *
