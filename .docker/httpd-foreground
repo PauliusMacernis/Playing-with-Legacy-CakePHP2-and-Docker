@@ -1,0 +1,8 @@
+#!/bin/bash
+set -e
+
+# Apache gets grumpy about PID files pre-existing
+rm -f /usr/local/apache2/logs/httpd.pid
+# We make sure that the Apache environment variables are sourced and run Apache in
+#  the foreground so that the Docker container won't exit.
+source /etc/apache2/envvars && exec apachectl -D FOREGROUND
