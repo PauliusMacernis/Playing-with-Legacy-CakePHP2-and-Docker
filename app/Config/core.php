@@ -1,5 +1,11 @@
 <?php
+// # Debug #1
 // var_dump(cakeenv('APP_DEBUG')); exit;
+
+// # Debug #2
+// Configure::write('debug', (int) cakeenv('APP_DEBUG', 0));
+// var_dump(Configure::read('debug')); exit;
+
 /**
  * This is core configuration file.
  *

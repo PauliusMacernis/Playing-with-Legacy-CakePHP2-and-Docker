@@ -23,8 +23,8 @@ COPY . /srv/cakephp
 
 # symlinks our Virtual Host file into the sites-enabled folder and enables the Vhost.
 RUN ln -s /etc/apache2/sites-available/000-default.conf /etc/apache2/sites-enabled/000-default.conf \
-    && chmod +x /usr/local/bin/httpd-foreground \
-    && chown -R www-data:www-data /srv/cakephp
+    && chmod +x /usr/local/bin/httpd-foreground
+RUN chown -R www-data:www-data /srv/cakephp
 
 WORKDIR /srv/cakephp
 
