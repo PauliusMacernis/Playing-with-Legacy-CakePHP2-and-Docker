@@ -24,5 +24,8 @@
 Icon?
 ehthumbs.db
 Thumbs.db
+
+# Extras
+Plugin/
 vendor/
 .env
