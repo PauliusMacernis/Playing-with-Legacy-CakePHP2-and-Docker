@@ -15,10 +15,15 @@ RUN apt-get -yqq update \
     && a2enmod rewrite
 
 COPY .docker/httpd-foreground /usr/local/bin/
+
 # Although the vhost.conf is the only virtual host, we name it 000-default.conf in the image
 #  because we want Apache to make this the default. Apache determines the first Vhost
 #  (alphabetically sorted) as the default.
 COPY .docker/vhost.conf /etc/apache2/sites-available/000-default.conf
+
+# Copy INI files for the command line
+COPY .docker/php/cli/*.ini /etc/php5/cli/conf.d
+
 COPY . /srv/cakephp
 
 # symlinks our Virtual Host file into the sites-enabled folder and enables the Vhost.
